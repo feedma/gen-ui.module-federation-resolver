@@ -1,0 +1,51 @@
+{
+  "name": "@feedma/vue-gen-ui-resolver",
+  "version": "0.0.0",
+  "description": "A vue js version for dynamic resolution of gen ui components",
+  "keywords": [
+    "vue",
+    "js",
+    "typescript",
+    "module",
+    "federation",
+    "generative",
+    "ui"
+  ],
+  "author": "Eduardo Salazar <eduardosalazar89@hotmail.es>",
+  "homepage": "https://github.com/feedma/gen-ui.module-federation-resolver",
+  "license": "MIT",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feedma/gen-ui.module-federation-resolver.git"
+  },
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "publish:local": "npm run build && npx yalc publish --push",
+    "dev": "vite build --watch",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "bugs": {
+    "url": "https://github.com/feedma/gen-ui.module-federation-resolver/issues"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.18",
+    "@originjs/vite-plugin-federation": "^1.4.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.0.6",
+    "vite-plugin-dts": "^4.5.4",
+    "vue-tsc": "^3.0.5"
+  }
+}
