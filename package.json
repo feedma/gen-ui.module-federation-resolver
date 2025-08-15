@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "npx lerna run build",
+    "postinstall": "npm rebuild",
     "publish:canary": "npx lerna publish --canary --yes --loglevel=verbose",
     "version:beta": "npx lerna version --yes --conventional-commits --conventional-prerelease --create-release github --preid beta --loglevel=verbose",
     "publish:beta": "npx lerna publish --yes --conventional-commits --conventional-prerelease --create-release github --loglevel=verbose",
