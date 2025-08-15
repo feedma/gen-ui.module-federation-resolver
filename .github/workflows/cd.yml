@@ -27,7 +27,6 @@ jobs:
 
   publish_beta:
     if: github.ref_name == 'develop' && github.event.pull_request.merged == true
-    needs: test
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -82,7 +81,6 @@ jobs:
       github.event_name == 'push' && 
       (startsWith(github.ref_name, 'feat/') || 
        startsWith(github.ref_name, 'feat-'))
-    needs: test
     runs-on: ubuntu-latest
     permissions:
       contents: write
