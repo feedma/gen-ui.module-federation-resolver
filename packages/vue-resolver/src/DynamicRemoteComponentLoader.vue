@@ -7,7 +7,7 @@
     
     <Suspense v-else>
       <template #default>
-        <LazyComponent />
+        <LazyComponent v-bind="attributes" />
       </template>
       <template #fallback>
         <div>Loading remote component...</div>
@@ -24,6 +24,7 @@ interface DynamicRemoteLoaderProps {
   url: string
   name: string
   module: string
+  attributes: Record<string, any>
 }
 
 interface RemoteComponentLoaderProps extends DynamicRemoteLoaderProps {}

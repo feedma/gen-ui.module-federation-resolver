@@ -2,6 +2,7 @@ interface DynamicRemoteLoaderProps {
     url: string;
     name: string;
     module: string;
+    attributes: Record<string, any>;
 }
 interface RemoteComponentLoaderProps extends DynamicRemoteLoaderProps {
 }
