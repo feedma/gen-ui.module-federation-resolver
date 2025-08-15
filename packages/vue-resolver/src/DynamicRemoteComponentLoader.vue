@@ -47,7 +47,7 @@ const getFederationMethods = async () => {
   return null
 }
 
-const LazyComponent = defineAsyncComponent(
+export const LazyComponent = defineAsyncComponent(
   {
     loader: async () => {
       try {
