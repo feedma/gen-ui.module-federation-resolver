@@ -1,8 +1,8 @@
-interface DynamicRemoteLoaderProps {
+interface DynamicRemoteLoaderProps<TProps = Record<string, unknown>> {
     url: string;
     name: string;
     module: string;
-    attributes: Record<string, any>;
+    props?: TProps;
 }
 interface RemoteComponentLoaderProps extends DynamicRemoteLoaderProps {
 }

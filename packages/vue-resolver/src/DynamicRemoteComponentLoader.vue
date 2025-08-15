@@ -7,7 +7,7 @@
     
     <Suspense v-else>
       <template #default>
-        <LazyComponent v-bind="attributes" />
+        <LazyComponent v-bind="props" />
       </template>
       <template #fallback>
         <div>Loading remote component...</div>
@@ -20,11 +20,11 @@
 import { defineAsyncComponent, ref } from 'vue'
 
 
-interface DynamicRemoteLoaderProps {
+interface DynamicRemoteLoaderProps<TProps = Record<string, unknown>> {
   url: string
   name: string
   module: string
-  attributes: Record<string, any>
+  props?: TProps
 }
 
 interface RemoteComponentLoaderProps extends DynamicRemoteLoaderProps {}
