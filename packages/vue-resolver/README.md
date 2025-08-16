@@ -59,7 +59,7 @@ app.mount('#app')
 ```vue
 <template>
   <div>
-    <DynamicRemoteLoader
+    <DynamicRemoteComponentLoader
       url="http://localhost:3001/assets/remoteEntry.js"
       name="remote"
       module="./MyComponent"
@@ -68,7 +68,7 @@ app.mount('#app')
 </template>
 
 <script setup>
-import { DynamicRemoteLoader } from '@feedma/vue-gen-ui-resolver'
+import { DynamicRemoteComponentLoader } from '@feedma/vue-gen-ui-resolver'
 </script>
 ```
 
@@ -77,7 +77,7 @@ import { DynamicRemoteLoader } from '@feedma/vue-gen-ui-resolver'
 ```vue
 <template>
   <div>
-    <DynamicRemoteLoader
+    <DynamicRemoteComponentLoader
       url="http://localhost:3001/assets/remoteEntry.js"
       name="remote"
       module="./MyComponent"
@@ -86,7 +86,7 @@ import { DynamicRemoteLoader } from '@feedma/vue-gen-ui-resolver'
 </template>
 
 <script setup>
-import { DynamicRemoteLoader } from '@feedma/vue-gen-ui-resolver'
+import { DynamicRemoteComponentLoader } from '@feedma/vue-gen-ui-resolver'
 </script>
 ```
 
@@ -151,7 +151,7 @@ export default defineConfig({
 <template>
   <div>
     <h1>Host Application</h1>
-    <DynamicRemoteLoader
+    <DynamicRemoteComponentLoader
       url="http://localhost:3001/assets/remoteEntry.js"
       name="remote"
       module="./MyComponent"
@@ -160,7 +160,7 @@ export default defineConfig({
 </template>
 
 <script setup>
-import { DynamicRemoteLoader } from '@feedma/vue-gen-ui-resolver'
+import { DynamicRemoteComponentLoader } from '@feedma/vue-gen-ui-resolver'
 </script>
 ```
 

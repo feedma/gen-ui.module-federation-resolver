@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      name: 'DynamicRemoteComponentLoader',
+      name: 'ReactGenUiResolver',
       fileName: (format) => `index.${format}.js`,
       formats: ['es', 'umd'],
     },
@@ -30,6 +30,9 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    dts({ insertTypesEntry: true })
+    dts({ 
+      insertTypesEntry: true,
+      rollupTypes: true
+    })
   ]
 })

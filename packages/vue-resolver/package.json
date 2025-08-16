@@ -2,6 +2,7 @@
   "name": "@feedma/vue-gen-ui-resolver",
   "version": "0.0.2-beta.1",
   "description": "A vue js version for dynamic resolution of gen ui components",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
@@ -19,6 +20,16 @@
   "license": "MIT",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    },
+    "./DynamicRemoteComponentLoader": {
+      "import": "./dist/DynamicRemoteComponentLoader.es.js",
+      "require": "./dist/DynamicRemoteComponentLoader.umd.js"
+    }
+  },
   "types": "dist/index.d.ts",
   "directories": {
     "lib": "dist",
