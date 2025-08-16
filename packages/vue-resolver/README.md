@@ -170,3 +170,6 @@ import { DynamicRemoteLoader } from '@feedma/vue-gen-ui-resolver'
 
 ### License
 MIT
+
+
+Developed by @feedma
