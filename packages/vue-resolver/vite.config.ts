@@ -7,8 +7,8 @@ export default defineConfig({
     lib: {
       entry: 'src/index.ts',
       name: 'DynamicRemoteComponentLoader',
-      fileName: (format) => `index.${format}.js`,
-      formats: ['es', 'umd'],
+      fileName: (format) => `index.${format === 'cjs' ? 'cjs' : format}.js`,
+      formats: ['es', 'umd', 'cjs'],
     },
     rollupOptions: {
       external: ['vue', '__federation__'],

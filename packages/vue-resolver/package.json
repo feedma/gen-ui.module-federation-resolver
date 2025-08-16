@@ -23,11 +23,13 @@
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
+      "require": "./dist/index.cjs.js",
+      "default": "./dist/index.umd.js"
     },
     "./DynamicRemoteComponentLoader": {
       "import": "./dist/DynamicRemoteComponentLoader.es.js",
-      "require": "./dist/DynamicRemoteComponentLoader.umd.js"
+      "require": "./dist/DynamicRemoteComponentLoader.cjs.js",
+      "default": "./dist/DynamicRemoteComponentLoader.umd.js"
     }
   },
   "types": "dist/index.d.ts",
