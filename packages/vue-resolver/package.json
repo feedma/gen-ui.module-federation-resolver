@@ -1,7 +1,10 @@
 {
   "name": "@feedma/vue-gen-ui-resolver",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A vue js version for dynamic resolution of gen ui components",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "vue",
     "js",
@@ -38,8 +41,8 @@
     "url": "https://github.com/feedma/gen-ui.module-federation-resolver/issues"
   },
   "peerDependencies": {
-    "vue": "^3.5.18",
-    "@originjs/vite-plugin-federation": "^1.4.1"
+    "@originjs/vite-plugin-federation": "1.x",
+    "vue": "3.x"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",

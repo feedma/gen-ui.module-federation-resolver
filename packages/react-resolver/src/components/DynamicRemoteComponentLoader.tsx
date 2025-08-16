@@ -15,18 +15,14 @@ const getFederationMethods = async () => {
   return null;
 };
 
-export interface ComponentLoaderProps<TProps = Record<"string", unknown>> {
+interface ComponentLoaderProps<TProps = Record<"string", unknown>> {
   url: string;
   name: string;
   module: string;
   props?: TProps;
 }
 
-export const ComponentLoader = ({
-  url,
-  name,
-  module,
-}: ComponentLoaderProps) => {
+const ComponentLoader = ({ url, name, module }: ComponentLoaderProps) => {
   return lazy(async () => {
     const federationMethods = await getFederationMethods();
 

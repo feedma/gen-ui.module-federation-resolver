@@ -10,6 +10,11 @@
   },
   "scripts": {
     "build": "npx lerna run build",
+    "publish:canary": "npx lerna publish --canary --yes --loglevel=verbose",
+    "version:beta": "npx lerna version --yes --conventional-commits --conventional-prerelease --create-release github --preid beta --loglevel=verbose",
+    "publish:beta": "npx lerna publish --yes --conventional-commits --conventional-prerelease --create-release github --preid beta --loglevel=verbose",
+    "version:stable": "npx lerna version --yes --conventional-commits --conventional-graduate --create-release github --loglevel=verbose",
+    "publish:stable": "npx lerna publish --yes --conventional-commits --conventional-graduate --create-release github --loglevel=verbose",
     "publish:local": "npx lerna run publish:local"
   }
 }
