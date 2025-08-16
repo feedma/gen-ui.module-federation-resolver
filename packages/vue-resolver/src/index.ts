@@ -1,10 +1,10 @@
 import type { App } from 'vue';
-import DynamicRemoteLoader from './DynamicRemoteComponentLoader.vue';
+import DynamicRemoteComponentLoader from './DynamicRemoteComponentLoader.vue';
 
 export default {
   install(app: App) {
-    app.component('DynamicRemoteLoader', DynamicRemoteLoader);
+    app.component('DynamicRemoteComponentLoader', DynamicRemoteComponentLoader);
   },
 };
 
-export { DynamicRemoteLoader };
+export { DynamicRemoteComponentLoader };
