@@ -1,6 +1,6 @@
 {
   "name": "@feedma/react-gen-ui-resolver",
-  "version": "0.0.2-beta.1",
+  "version": "0.0.2-beta.2",
   "description": "A react js version for dynamic resolution of gen ui components",
   "publishConfig": {
     "access": "public"

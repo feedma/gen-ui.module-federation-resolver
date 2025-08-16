@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.2-beta.2 (2025-08-16)
+
+**Note:** Version bump only for package @feedma/react-gen-ui-resolver
+
+
+
+
+
 ## 0.0.2-beta.1 (2025-08-16)
 
 **Note:** Version bump only for package @feedma/react-gen-ui-resolver
