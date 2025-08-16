@@ -22,14 +22,10 @@
   "module": "dist/index.es.js",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.es.js",
       "require": "./dist/index.cjs.js",
       "default": "./dist/index.umd.js"
-    },
-    "./DynamicRemoteComponentLoader": {
-      "import": "./dist/DynamicRemoteComponentLoader.es.js",
-      "require": "./dist/DynamicRemoteComponentLoader.cjs.js",
-      "default": "./dist/DynamicRemoteComponentLoader.umd.js"
     }
   },
   "types": "dist/index.d.ts",
@@ -45,7 +41,7 @@
     "url": "git+https://github.com/feedma/gen-ui.module-federation-resolver.git"
   },
   "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly",
+    "build": "vite build",
     "publish:local": "npm run build && npx yalc publish --push",
     "dev": "vite build --watch",
     "type-check": "tsc --noEmit"
