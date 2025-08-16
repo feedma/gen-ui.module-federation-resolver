@@ -5,12 +5,8 @@ on:
     branches:
       - main
       - develop
+      - beta
     types: [closed]
-  push:
-    branches:
-      - "feat/**"
-      - "feature/**"
-      - "feat-*"
 
 jobs:
   test:
