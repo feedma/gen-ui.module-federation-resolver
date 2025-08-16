@@ -2,6 +2,10 @@
 
 A Vue.js component for dynamically loading remote components using Module Federation.
 
+## Requirements
+- @originjs/vite-plugin-federation v1.x
+- vue v3.x
+
 ## Installation
 
 ```bash

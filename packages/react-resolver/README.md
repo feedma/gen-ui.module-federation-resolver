@@ -2,6 +2,11 @@
 
 A React component for dynamically loading remote components using Module Federation.
 
+
+## Requirements
+- @originjs/vite-plugin-federation v1.x
+- react v19.x
+
 ## Installation
 
 ```bash
