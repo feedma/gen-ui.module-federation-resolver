@@ -11,11 +11,11 @@
   },
   "scripts": {
     "build": "npx lerna run build",
-    "publish:canary": "npx lerna publish --canary --yes --create-release github --loglevel=verbose",
-    "version:beta": "npx lerna version --yes --conventional-commits --conventional-prerelease --create-release github --preid beta --loglevel=verbose",
-    "publish:beta": "npx lerna publish --yes --conventional-commits --conventional-prerelease --create-release github --preid beta --loglevel=verbose",
+    "publish:canary": "npx lerna publish --canary --dist-tag canary --yes --create-release github --loglevel=verbose",
+    "version:beta": "npx lerna version --yes --conventional-commits --conventional-prerelease --preid beta --create-release github --loglevel=verbose",
+    "publish:beta": "npx lerna publish from-git --dist-tag beta --yes --loglevel=verbose",
     "version:stable": "npx lerna version --yes --conventional-commits --conventional-graduate --create-release github --loglevel=verbose",
-    "publish:stable": "npx lerna publish --yes --conventional-commits --conventional-graduate --create-release github --loglevel=verbose",
+    "publish:stable": "npx lerna publish from-git --dist-tag latest --yes --loglevel=verbose",
     "publish:local": "npx lerna run publish:local"
   }
 }
