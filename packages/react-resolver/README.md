@@ -194,31 +194,5 @@ function App() {
 export default App;
 ```
 
-## Advanced Usage
-
-### Using the ComponentLoader Directly
-
-For more control over the loading process, you can use the `ComponentLoader` function directly:
-
-```tsx
-import React, { Suspense } from 'react';
-import { ComponentLoader } from '@feedma/react-gen-ui-resolver';
-
-function App() {
-  const LazyComponent = ComponentLoader({
-    url: "http://localhost:3001/assets/remoteEntry.js",
-    name: "remote",
-    module: "./MyComponent"
-  });
-
-  return (
-    <Suspense fallback={<div>Custom loading...</div>}>
-      <LazyComponent title="Hello" />
-    </Suspense>
-  );
-}
-```
-
-## License
-
+### License
 MIT
