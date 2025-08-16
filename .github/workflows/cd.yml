@@ -43,7 +43,7 @@ jobs:
           git remote set-url origin https://github.com/${{github.repository}}.git
       - name: Build
         run: |
-          npm ci
+          npm i
           npm run build
       - name: Publish packages
         run: npm run publish:beta
@@ -69,7 +69,7 @@ jobs:
           git remote set-url origin https://github.com/${{github.repository}}.git
       - name: Build
         run: |
-          npm ci
+          npm i
           npm run build
       - name: Publish packages
         run: npm run publish:stable
@@ -97,7 +97,7 @@ jobs:
           git remote set-url origin https://github.com/${{github.repository}}.git
       - name: Build
         run: |
-          npm ci
+          npm i
           npm rebuild
           npm run build
       - name: Publish packages
