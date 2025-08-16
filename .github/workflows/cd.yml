@@ -6,6 +6,12 @@ on:
       - main
       - beta
     types: [closed]
+  push:
+    branches:
+      - feat**
+      - ci/**
+      - fix/**
+      - hotfix/**
 
 jobs:
   test:
@@ -22,7 +28,7 @@ jobs:
 
   publish_canary:
     if: |
-      github.ref_name != 'develop' && github.ref_name != 'main'
+      github.ref_name != 'main' && github.ref_name != 'beta'
     runs-on: ubuntu-latest
     permissions:
       contents: write
