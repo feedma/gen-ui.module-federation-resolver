@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      name: 'DynamicRemoteComponentLoader',
+      name: 'VueGenUiResolver',
       fileName: (format) => `index.${format === 'cjs' ? 'cjs' : format}.js`,
       formats: ['es', 'umd', 'cjs'],
     },
