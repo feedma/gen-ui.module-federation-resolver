@@ -2,6 +2,10 @@
 
 A Vue.js component for dynamically loading remote components using Module Federation.
 
+## Requirements
+- @originjs/vite-plugin-federation v1.x
+- vue v3.x
+
 ## Installation
 
 ```bash
@@ -164,89 +168,5 @@ import { DynamicRemoteLoader } from '@feedma/vue-gen-ui-resolver'
 </script>
 ```
 
-## Advanced Usage
-
-### Using the LazyComponent Directly
-
-For more control over the loading process, you can use the `LazyComponent` directly:
-
-```vue
-<template>
-  <div>
-    <Suspense>
-      <template #default>
-        <LazyComponent 
-          :url="remoteUrl"
-          :name="remoteName"
-          :module="remoteModule"
-          :title="'Hello from Remote'"
-          :count="42"
-        />
-      </template>
-      <template #fallback>
-        <div>Custom loading state...</div>
-      </template>
-    </Suspense>
-  </div>
-</template>
-
-<script setup>
-import { LazyComponent } from '@feedma/vue-gen-ui-resolver'
-
-const remoteUrl = 'http://localhost:3001/assets/remoteEntry.js'
-const remoteName = 'remote'
-const remoteModule = './MyComponent'
-</script>
-```
-
-### Custom Error Handling
-
-You can also handle errors more granularly when using the `LazyComponent` directly:
-
-```vue
-<template>
-  <div>
-    <div v-if="error" class="custom-error">
-      <h3>Custom Error Handler:</h3>
-      <p>{{ error }}</p>
-      <button @click="retry">Retry</button>
-    </div>
-    
-    <Suspense v-else>
-      <template #default>
-        <LazyComponent 
-          :url="remoteUrl"
-          :name="remoteName"
-          :module="remoteModule"
-          v-bind="componentProps"
-        />
-      </template>
-      <template #fallback>
-        <div>Loading...</div>
-      </template>
-    </Suspense>
-  </div>
-</template>
-
-<script setup>
-import { ref } from 'vue'
-import { LazyComponent } from '@feedma/vue-gen-ui-resolver'
-
-const error = ref(null)
-const remoteUrl = 'http://localhost:3001/assets/remoteEntry.js'
-const remoteName = 'remote'
-const remoteModule = './MyComponent'
-const componentProps = {
-  title: 'Dynamic Component',
-  theme: 'dark'
-}
-
-const retry = () => {
-  error.value = null
-}
-</script>
-```
-
-## License
-
+### License
 MIT

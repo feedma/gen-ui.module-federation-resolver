@@ -1,0 +1,106 @@
+name: Publish packages
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+    types: [closed]
+  push:
+    branches:
+      - "feat/**"
+      - "feature/**"
+      - "feat-*"
+
+jobs:
+  test:
+    if: github.base_ref == 'main'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: npm ci
+      - run: npm test
+
+  publish_beta:
+    if: github.ref_name == 'beta' && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: "https://registry.npmjs.org"
+      - name: Setup
+        run: |
+          git config --global user.name "${{github.actor}}"
+          git config --global user.email "${{github.actor}}@users.noreply.github.com"
+          git remote set-url origin https://github.com/${{github.repository}}.git
+      - name: Build
+        run: |
+          npm i
+          npm run build
+      - name: Publish packages
+        run: npm run publish:beta
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish_stable:
+    if: github.ref_name == 'main' && github.event.pull_request.merged == true
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: "https://registry.npmjs.org"
+      - name: Setup
+        run: |
+          git config --global user.name "${{github.actor}}"
+          git config --global user.email "${{github.actor}}@users.noreply.github.com"
+          git remote set-url origin https://github.com/${{github.repository}}.git
+      - name: Build
+        run: |
+          npm i
+          npm run build
+      - name: Publish packages
+        run: npm run publish:stable
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish_canary:
+    if: github.ref_name == 'develop' && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: "https://registry.npmjs.org"
+      - name: Setup
+        run: |
+          git config --global user.name "${{github.actor}}"
+          git config --global user.email "${{github.actor}}@users.noreply.github.com"
+          git remote set-url origin https://github.com/${{github.repository}}.git
+      - name: Build
+        run: |
+          npm i
+          npm rebuild
+          npm run build
+      - name: Publish packages
+        run: npm run publish:canary
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
