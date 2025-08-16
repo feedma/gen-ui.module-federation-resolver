@@ -32,10 +32,16 @@ export default defineConfig({
     react(),
     federation({
       name: 'host',
-      remotes: {},
+      remotes: {
+        _: "",
+        // you can add more static remotes here
+      },
       shared: ['react', 'react-dom']
     })
-  ]
+  ],
+  optimizeDeps: {
+    exclude: ["__federation__"],
+  },
 })
 ```
 
@@ -165,10 +171,16 @@ export default defineConfig({
     react(),
     federation({
       name: 'host',
-      remotes: {},
+      remotes: {
+        _: "",
+        // you can add more static remotes here
+      },
       shared: ['react', 'react-dom']
     })
-  ]
+  ],
+  optimizeDeps: {
+    exclude: ["__federation__"],
+  },
 })
 ```
 
