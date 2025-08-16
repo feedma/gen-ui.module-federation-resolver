@@ -12,7 +12,9 @@
     "publish": {
       "canary": {
         "forcePublish": true,
-        "distTag": "canary"
+        "distTag": "canary",
+        "prerelease": true,
+        "preid": "alpha"
       }
     }
   }
