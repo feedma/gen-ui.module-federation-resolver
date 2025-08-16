@@ -41,13 +41,12 @@
     "url": "https://github.com/feedma/gen-ui.module-federation-resolver/issues"
   },
   "peerDependencies": {
-    "@originjs/vite-plugin-federation": "^1.4.1",
-    "react": "^18.0.0"
+    "@originjs/vite-plugin-federation": "1.x",
+    "react": "19.x"
   },
   "devDependencies": {
-    "@types/react": "^18.0.0",
+    "@types/react": "^19.0.0",
     "@vitejs/plugin-react": "^5.0.0",
-    "react": "^18.0.0",
     "typescript": "^5.9.2",
     "vite": "^7.1.2",
     "vite-plugin-dts": "^4.5.4"
