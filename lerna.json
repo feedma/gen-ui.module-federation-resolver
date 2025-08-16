@@ -8,6 +8,12 @@
       "conventionalCommits": true,
       "allowBranch": ["main", "develop", "feat", "feature", "feat-*"],
       "message": "chore(release): publish"
+    },
+    "publish": {
+      "canary": {
+        "forcePublish": true,
+        "distTag": "canary"
+      }
     }
   }
 }
