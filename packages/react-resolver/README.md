@@ -201,3 +201,5 @@ export default App;
 
 ### License
 MIT
+
+Developed by @feedma
