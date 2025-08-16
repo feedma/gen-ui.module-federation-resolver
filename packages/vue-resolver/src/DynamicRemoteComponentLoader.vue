@@ -7,7 +7,7 @@
     
     <Suspense v-else>
       <template #default>
-        <LazyComponent v-bind="props" />
+        <LazyComponent v-bind="props.props" />
       </template>
       <template #fallback>
         <div>Loading remote component...</div>
