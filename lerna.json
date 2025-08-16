@@ -6,7 +6,7 @@
     "version": {
       "createRelease": "github",
       "conventionalCommits": true,
-      "allowBranch": ["main", "develop", "feat", "feature", "feat-*"],
+      "allowBranch": ["main", "develop", "feat/*", "feature/*", "feat-*"],
       "message": "chore(release): publish"
     },
     "publish": {
