@@ -1,6 +1,6 @@
 {
   "name": "@feedma/vue-gen-ui-resolver",
-  "version": "0.0.2-beta.6",
+  "version": "0.0.2-beta.7",
   "description": "A vue js version for dynamic resolution of gen ui components",
   "type": "module",
   "publishConfig": {
